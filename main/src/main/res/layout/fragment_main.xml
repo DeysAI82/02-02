@@ -46,6 +46,7 @@
         app:layout_constraintVertical_bias="0.123" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="412dp"
         android:layout_height="240dp"
         android:orientation="vertical"
@@ -67,45 +68,36 @@
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@color/white"
-            android:text="Red" />
+            android:text="green" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@color/white"
-            android:text="Red" />
+            android:text="black" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@color/white"
-            android:text="Red" />
+            android:text="yellow" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@color/white"
-            android:text="Red" />
+            android:text="blue" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@color/white"
-            android:text="Red" />
+            android:text="grey" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="77dp"
-        android:background="@color/white"
-        android:text="Red"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="461dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
