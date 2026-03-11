@@ -106,23 +106,32 @@ fun SecondActivityScreen() {
                         else -> Icons.Filled.Settings
                     }
 
+                    val label = screen.title
+//                    when (screen.route) {
+//                        Screen.Home.route -> "Home"
+//                        Screen.ScreenOne.route -> "List"
+//                        else -> "Settings"
+//                    }
+
                     NavigationBarItem(
-                        icon = {
-                            Icon(
-                                imageVector = icon,
-                                contentDescription = screen.title
-                            )
-                        },
-                        label = { Text(screen.title) },
                         selected = currentRoute == screen.route,
                         onClick = {
                             navController.navigate(screen.route) {
-                                popUpTo(navController.graph.findStartDestination().id) {
+                                popUpTo(navController.graph.startDestinationId) {
                                     saveState = true
                                 }
                                 launchSingleTop = true
                                 restoreState = true
                             }
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = icon,
+                                contentDescription = label
+                            )
+                        },
+                        label = {
+                            Text(label)
                         }
                     )
                 }
