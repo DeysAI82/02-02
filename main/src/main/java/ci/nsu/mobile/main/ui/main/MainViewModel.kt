@@ -11,9 +11,7 @@ data class CounterUiState(
     val count: Int = 0,
     val history: List<String> = emptyList()
 )
-object Constans {
-    const val MAX_S = 4
-}
+
 
 class MainViewModel : ViewModel() {
 
@@ -23,7 +21,7 @@ class MainViewModel : ViewModel() {
     fun increment() {
         _uiState.update { state ->
             val newCount = state.count + 1
-            val newHistory = listOf("+1 (итого: $newCount)") + state.history.take(Constans.MAX_S)
+            val newHistory = listOf("+1 (итого: $newCount)") + state.history.take(MAX_S)
 
             state.copy(count = newCount, history = newHistory)
         }
@@ -33,7 +31,7 @@ class MainViewModel : ViewModel() {
         _uiState.update { state ->
             if (state .count == 0) return@update state
             val newCount = state.count - 1
-            val newHistory = listOf("-1 (итого: $newCount)") + state.history.take(Constans.MAX_S)
+            val newHistory = listOf("-1 (итого: $newCount)") + state.history.take(MAX_S)
 
             state.copy(count = newCount, history = newHistory)
         }
@@ -41,9 +39,13 @@ class MainViewModel : ViewModel() {
 
     fun reset() {
         _uiState.update { state ->
-            val newHistory = listOf("Сброс (итого: 0)") + state.history.take(Constans.MAX_S)
+            val newHistory = listOf("Сброс (итого: 0)") + state.history.take(MAX_S)
 
             state.copy(count = 0, history = newHistory)
         }
+    }
+
+    companion object {
+        const val MAX_S = 4
     }
 }
