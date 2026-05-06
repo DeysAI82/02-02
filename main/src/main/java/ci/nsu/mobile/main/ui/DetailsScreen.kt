@@ -34,10 +34,13 @@ fun DetailsScreen(
     }
 
     Column(
+
         modifier = Modifier
+            .systemBarsPadding()
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
 
         Text(
