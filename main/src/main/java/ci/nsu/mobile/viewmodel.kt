@@ -36,6 +36,10 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
                 println("❌ GROUP ERROR = ${it.message}")
                 error.value = it.message
             }
+            result.onSuccess {
+                println("GROUPS = $it")
+                groups.value = it
+            }
         }
     }
 
@@ -97,6 +101,7 @@ class AuthViewModel(application: Application) : AndroidViewModel(application) {
             loading.value = false
 
             result.onSuccess {
+
                 users.value = it
             }
 

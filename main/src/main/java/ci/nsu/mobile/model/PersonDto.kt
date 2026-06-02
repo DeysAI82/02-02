@@ -1,5 +1,6 @@
 package ci.nsu.mobile.main.model
 
+
 data class PersonDto(
     val firstName: String,
     val lastName: String,

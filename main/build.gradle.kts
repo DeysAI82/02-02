@@ -86,4 +86,6 @@ dependencies {
 
 // Compose + LiveData
     implementation("androidx.compose.runtime:runtime-livedata:1.6.7")
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 }
